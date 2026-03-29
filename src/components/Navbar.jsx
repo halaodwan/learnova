@@ -13,7 +13,7 @@ function Navbar() {
 
   return (
     <nav className="bg-[hsl(var(--edu-nav))] text-white p-4 flex justify-between">
-      <h1 className="font-bold">EduAI</h1>
+      <h1 className="font-bold">Learnova</h1>
 
       <div className="flex gap-4">
         {links.map((link) => (

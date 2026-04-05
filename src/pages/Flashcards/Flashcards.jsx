@@ -76,7 +76,7 @@ const Flashcards = () => {
 
       
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 border border-gray-200 dark:border-gray-700">
-        <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+        <h3 className="text-lg font-semibold mb-3 !text-white">
           📚 Previous Flashcard Sets
         </h3>
 

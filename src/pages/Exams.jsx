@@ -95,7 +95,7 @@ export default function ExamPage() {
             animate={{scale:1,opacity:1}}
             className="bg-slate-800 text-white p-8 rounded-3xl w-full max-w-md space-y-4"
           >
-            <h2 className="text-2xl font-bold text-center">Exam Settings</h2>
+            <h2 className="text-2xl font-bold text-center !text-white">Exam Settings</h2>
 
             {/* Exam Type */}
             <div>
@@ -175,7 +175,7 @@ export default function ExamPage() {
                 const qIndex = page*questionsPerPage+i;
                 return (
                   <div key={qIndex} className="bg-slate-800 text-white p-6 rounded-2xl shadow-lg backdrop-blur">
-                    <h2 className="font-semibold mb-4">{q.q}</h2>
+                    <h2 className="font-semibold mb-4 !text-white">{q.q}</h2>
                     <div className="space-y-3">
                       {q.type==="Essay" ? (
                         <textarea

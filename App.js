@@ -12,7 +12,7 @@ const studyMaterialRoutes = require('./Routes/StudyMaterialRoutes');
 
 const contentRoutes = require('./Routes/ContentRoutes');
 
-const flashcardRoutes = require('./Routes/FlashcardRoutes');
+const flashcardRoutes = require('./Routes/FlachcardRoutes');
 
 const examRoutes = require('./Routes/ExamRoutes');
 

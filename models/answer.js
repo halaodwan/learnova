@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
 });
 Answer.belongsTo(models.Option, {
 
-  foreignKey: 'option_id',
+  foreignKey: 'selected_option_id',
 
   as: 'option',
 

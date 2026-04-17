@@ -22,17 +22,19 @@ module.exports = (sequelize, DataTypes) => {
   onUpdate: 'CASCADE'
 
 });
-Exam.belongsTo(models.User, {
+
+User.hasMany(models.Exam, {
 
   foreignKey: 'user_id',
 
-  as: 'user',
+  as: 'exams',
 
   onDelete: 'CASCADE',
 
   onUpdate: 'CASCADE'
 
-});
+})
+
 User.hasMany(models.StudyMaterial, {
 
   foreignKey: 'user_id',

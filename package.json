@@ -2,7 +2,6 @@
   "name": "learnova",
   "private": true,
   "version": "0.0.0",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
+    "express": "^5.2.1",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.7.0",
     "mysql2": "^3.20.0",

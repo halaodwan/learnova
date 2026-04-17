@@ -14,7 +14,7 @@ const {
 
   deleteFlashcard,
 
-} = require('../controllers/flachcardController');
+} = require('../controllers/flashcardController');
 
 router.get('/', getAllFlashcards);
 

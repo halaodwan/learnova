@@ -39,7 +39,7 @@ export default function LoginModal({ onClose, onLoginSuccess }) {
         </div>
 
         <h2 className="text-center text-2xl font-bold text-slate-800">
-          Welcome to EduAI
+          Welcome to Learnova
         </h2>
         <p className="text-center text-gray-500 mb-6">
           Sign in to continue learning

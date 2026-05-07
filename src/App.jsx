@@ -9,7 +9,7 @@ import Dashboard from "./pages/Dashboard";
 
 
 import Flashcards from "./pages//Flashcards/Flashcards";
-import Dashboard from "./pages/Dashboard";
+
 import Explanations from "./pages/Explanations";
 
 function App() {

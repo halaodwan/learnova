@@ -6,6 +6,15 @@ import Exams from "./pages/Exams";
 import LoginModal from "./components/LoginModal";
 import Dashboard from "./pages/Dashboard";
 
+import Exams from "./pages/Exams";
+import LoginModal from "./components/LoginModal";
+import Dashboard from "./pages/Dashboard";
+
+
+import Flashcards from "./pages//Flashcards/Flashcards";
+
+import Explanations from "./pages/Explanations";
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
@@ -43,6 +52,27 @@ function App() {
           </button>
         </div>
       )}
+
+
+      {!isLoggedIn && !showLogin && (
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={() => setShowLogin(true)}
+            className="bg-blue-600 text-white p-2 rounded"
+          >
+            Login
+          </button>
+        </div>
+      )}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/explanations" element={<Explanations />} />
+        <Route path="/flashcards" element={<Flashcards />} />
+        
+      </Routes>
+
     </BrowserRouter>
   );
 }

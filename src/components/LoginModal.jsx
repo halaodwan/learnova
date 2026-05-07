@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginModal({ onClose, onLoginSuccess }) {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -11,6 +13,7 @@ export default function LoginModal({ onClose, onLoginSuccess }) {
     e.preventDefault();
 
     if (!email || !password) {
+    if (!firstName || !lastName || !email || !password) {
       alert("Please fill all fields");
       return;
     }
@@ -27,6 +30,10 @@ export default function LoginModal({ onClose, onLoginSuccess }) {
     }
 
     // التوجيه للصفحة الرئيسية
+    console.log({ firstName, lastName, email, password });
+
+    if (onClose) onClose();
+    if (typeof onLoginSuccess === "function") onLoginSuccess();
     navigate("/");
   };
 
@@ -37,6 +44,7 @@ export default function LoginModal({ onClose, onLoginSuccess }) {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.3 }}
         className="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8"
+        className="bg-white w-full max-w-lg rounded-3xl shadow-2xl p-6 max-h-[90vh] overflow-y-auto"
       >
         <div className="flex justify-center mb-4">
           <div className="bg-slate-800 text-white p-4 rounded-2xl text-xl">
@@ -45,13 +53,38 @@ export default function LoginModal({ onClose, onLoginSuccess }) {
         </div>
 
         <h2 className="text-center text-2xl font-bold text-slate-800">
-          Welcome to EduAI
+          Welcome to Learnova
         </h2>
         <p className="text-center text-gray-500 mb-6">
           Sign in to continue learning
         </p>
 
         <form onSubmit={handleLogin} className="space-y-4">
+          {/* First Name */}
+          <div>
+            <label className="text-sm text-gray-600">First Name</label>
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              placeholder="John"
+              className="w-full mt-1 px-4 h-10 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-slate-800"
+            />
+          </div>
+
+          {/* Last Name */}
+          <div>
+            <label className="text-sm text-gray-600">Last Name</label>
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              placeholder="Doe"
+              className="w-full mt-1 px-4 h-10 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-slate-800"
+            />
+          </div>
+
+          {/* Email */}
           <div>
             <label className="text-sm text-gray-600">Email</label>
             <input
@@ -59,10 +92,11 @@ export default function LoginModal({ onClose, onLoginSuccess }) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="w-full mt-1 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-slate-800"
+              className="w-full mt-1 px-4 h-10 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-slate-800"
             />
           </div>
 
+          {/* Password */}
           <div>
             <label className="text-sm text-gray-600">Password</label>
             <input
@@ -70,7 +104,7 @@ export default function LoginModal({ onClose, onLoginSuccess }) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="********"
-              className="w-full mt-1 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-slate-800"
+              className="w-full mt-1 px-4 h-10 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-slate-800"
             />
           </div>
 

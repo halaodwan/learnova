@@ -52,8 +52,7 @@ function App() {
       )}
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        
         <Route path="/explanations" element={<Explanations />} />
         <Route path="/flashcards" element={<Flashcards />} />
         

@@ -36,6 +36,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/exams" element={<Exams />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/explanations" element={<Explanations />} />
+          <Route path="/flashcards" element={<Flashcards />} />
         </Routes>
       )}
 
